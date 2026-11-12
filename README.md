@@ -22,7 +22,8 @@ Planit is a connective planner for high school students. Students juggle assignm
 - **Connections:** connect/disconnect, item counts, "last synced" times, and Sync now
 - **Task drawer:** edit title, due date, class, priority, and notes, or delete the task
 - **Settings:** dark/light theme, name, grade, and **Reset demo**
-- Responsive: sidebar on desktop, bottom tab bar on phones. Everything persists in `localStorage`.
+- Responsive: sidebar on desktop, bottom tab bar on phones.
+- **Fresh demo in every tab:** state lives in `sessionStorage`, so each newly opened tab starts at onboarding, and any number of people can use the live link at once without affecting each other. Reloading the same tab keeps your progress.
 
 ## Run it locally
 
@@ -54,7 +55,7 @@ No environment variables or backend are needed. The build uses relative asset pa
 
 The pitch in one line: **Planit doesn't just collect your assignments, it tells you what to do next.**
 
-1. **(Before class)** Open Settings and click **Reset demo** so you start fresh on onboarding.
+1. **(Before class)** Open the site in a new tab: it always starts fresh at onboarding. (Settings → Reset demo does the same mid-session.)
 2. **Onboarding (10s):** "This is Planit — all your school, one orbit." Click **Get started**, type your name, pick a grade.
 3. **Connect (10s):** Click **Connect** on all four accounts. Point out the "Imported X items" confirmations. Click **Enter your orbit**.
 4. **Today (10s):** "Everything from four apps in one place." Point out the orbit ring and **~4h 45m tonight**: "Planit knows how long your night is."
@@ -74,7 +75,7 @@ src/
   pages/        Today, Week (week grid + workload heatmap), Classes, Connections,
                 Onboarding, Settings
   data/         mockData.ts: courses and ~35 raw records relative to today
-  lib/          store (React context + localStorage), planning.ts (estimates +
+  lib/          store (React context + sessionStorage), planning.ts (estimates +
                 prioritization), levels.ts (XP + Orbit Levels), parse.ts (quick-add),
                 dedupe.ts (duplicate merging), dates.ts, sources.ts, storage.ts
   types/        Task, Course, Connection, Settings, SourceId

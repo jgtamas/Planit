@@ -15,7 +15,7 @@
     <title>Planit</title>
     <script>
       try {
-        var s = JSON.parse(localStorage.getItem('planit:settings') || '{}');
+        var s = JSON.parse(sessionStorage.getItem('planit:settings') || '{}');
         if (s.theme === 'light') document.documentElement.classList.remove('dark');
       } catch (e) {}
     </script>

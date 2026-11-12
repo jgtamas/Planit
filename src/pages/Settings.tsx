@@ -86,7 +86,7 @@ export function Settings() {
           </div>
         </Row>
 
-        <Row title="Reset demo" desc="Clears all data and restarts onboarding. Use this before presenting.">
+        <Row title="Reset demo" desc="Restarts onboarding in this tab. Every newly opened tab also starts fresh.">
           {confirmReset ? (
             <div className="flex gap-2">
               <Button size="sm" variant="ghost" onClick={() => setConfirmReset(false)}>

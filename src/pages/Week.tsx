@@ -131,7 +131,7 @@ type View = 'week' | 'month';
 export function Week() {
   const [view, setView] = useState<View>(() => {
     try {
-      return (localStorage.getItem('planit:calendarView') as View) || 'week';
+      return (sessionStorage.getItem('planit:calendarView') as View) || 'week';
     } catch {
       return 'week';
     }
@@ -139,7 +139,7 @@ export function Week() {
   const choose = (v: View) => {
     setView(v);
     try {
-      localStorage.setItem('planit:calendarView', v);
+      sessionStorage.setItem('planit:calendarView', v);
     } catch {
       /* ignore */
     }
